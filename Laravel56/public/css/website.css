@@ -1,0 +1,52 @@
+#team {
+  margin-top: 100px !important;
+  padding-bottom: 2em;
+}
+
+#portfolio {
+  padding-top: 40px;
+}
+
+#menu {
+  padding-bottom: 0px;
+}
+
+.team-member {
+  text-align: center !important;
+}
+
+.bg-roxo {
+  background-color: #6351ce;
+}
+
+.team-member img {
+  height: 225px !important;
+  width: 225px !important;
+  margin: 1.5rem !important;
+}
+
+section h3.section-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 75px;
+  text-transform: none;
+  font-family: 'Droid Serif','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+section {
+  padding: 0 0 2em 0;
+}
+
+.mt-10 {
+  margin-top: 8em;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+main {
+  background-color: #fff;
+}
+
