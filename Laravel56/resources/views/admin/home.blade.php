@@ -5,10 +5,10 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
 	<h1 class="h2">Página Carousel</h1>	
     </div> 
-    <form method="post" enctype="multipart/form-data" action="{{route('admin.uploadImg')}}">
+    <form method="post" enctype="multipart/form-data" action="{{route('carousel.store')}}">
 	{{ csrf_field() }} 
 	<div class="form-group">	    
-	    <label for="exampleInputEmail1">Texto Da Imagem</label>
+	    <label for="exampleInputEmail1">Texto da Imagem Principal</label>
 	    <input class="form-control" type="text" placeholder="Default input">
 	    <small id="textoimg" class="form-text text-muted"></small>
 	</div>
@@ -47,16 +47,30 @@
 	<h1 class="h2">Página TextoSlide</h1>	
     </div>
     <h2>Editar</h2>
-    <form class="form-group" method="post" action="{{route('admin.textoSlide')}}">                                   
+    <form class="form-group" method="post" action="{{route('textoSlide.store')}}">                                   
 	{{ csrf_field() }}  
 	<div class="form-group">	    
-	    <label for="exampleInputEmail1">Texto Da Imagem 1</label>
-	    <textarea class="form-control" name="textoimg1" type="text" placeholder="Default input"></textarea>
+	    <label for="exampleInputEmail1">Título da Imagem 1</label>
+	    <input class="form-control" name="titulo" type="text" placeholder="Default input">
 	    <small class="form-text text-muted"></small>
 	</div>
 	<div class="form-group">	    
-	    <label for="exampleInputEmail1">Texto Da Imagem 2</label>
-	    <textarea class="form-control" name="textoimg2" type="text" placeholder="Default input"></textarea>
+	    <label for="exampleInputEmail1">Texto da Imagem 1</label>
+	    <textarea class="form-control" name="descricao" type="text" placeholder="Default input"></textarea>
+	    <small class="form-text text-muted"></small>
+	</div>
+	<button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+    <form class="form-group" method="post" action="{{route('textoSlide.store')}}">
+	{{ csrf_field() }}  
+	<div class="form-group">	    
+	    <label for="exampleInputEmail1">Título da Imagem 2</label>
+	    <input class="form-control" name="titulo" type="text" placeholder="Default input">
+	    <small class="form-text text-muted"></small>
+	</div>
+	<div class="form-group">	    
+	    <label for="exampleInputEmail1">Texto da Imagem 2</label>
+	    <textarea class="form-control" name="descricao" type="text" placeholder="Default input"></textarea>
 	    <small class="form-text text-muted"></small>
 	</div>
 	<button type="submit" class="btn btn-primary mt-3">Submit</button>

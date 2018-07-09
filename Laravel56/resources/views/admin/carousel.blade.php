@@ -8,9 +8,8 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
 	<link rel="stylesheet" href="{{asset('css/website.css')}}">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">	
         <title>Hello, world!</title>
     </head>
     <body class="bg-roxo">
@@ -45,32 +44,32 @@
 			    <div class="sidebar-sticky">
 				<ul class="nav flex-column pt-2 text-white">				    			    
 				    <li class="nav-item">
-					<a class="nav-link active" href="{{route('carousel')}}">					
+					<a class="nav-link active" href="{{route('carousel.index')}}">					
 					    <h5 style="font-size: 16px;">Carousel</h5><span class="sr-only">(current)</span>
 					</a>
 				    </li>
 				    <li class="nav-item">
-					<a class="nav-link" href="{{route('textoslide')}}">
+					<a class="nav-link" href="{{route('textoSlide.index')}}">
 					    <h5 style="font-size: 16px;">TextoSlide</h5>
 					</a>
 				    </li>
 				    <li class="nav-item">
-					<a class="nav-link" href="{{route('sobre')}}">
+					<a class="nav-link" href="{{route('sobre.index')}}">
 					    <h5 style="font-size: 16px;">Sobre</h5>
 					</a>
 				    </li> 
 				    <li class="nav-item">
-					<a class="nav-link" href="{{route('portfolio')}}">
+					<a class="nav-link" href="{{route('portfolio.index')}}">
 					    <h5 style="font-size: 16px;">Portfólio</h5>
 					</a>
 				    </li>
 				    <li class="nav-item">
-					<a class="nav-link" href="{{route('team')}}">
+					<a class="nav-link" href="{{route('team.index')}}">
 					    <h5 style="font-size: 16px;">Team</h5>
 					</a>
 				    </li>
 				     <li class="nav-item">
-					<a class="nav-link" href="{{route('rodape')}}">
+					<a class="nav-link" href="{{route('rodape.index')}}">
 					    <h5 style="font-size: 16px;">Rodapé</h5>
 					</a>
 				    </li>
@@ -81,7 +80,7 @@
 			    @yield('menu')
 			@elseif ($url == '/admin/carousel')
 			    @yield('menu')
-			@elseif($url == '/admin/textoslide')
+			@elseif($url == '/admin/textoSlide')
 			    @yield('textoslide')
 			@elseif($url == '/admin/sobre')
 			    @yield('sobre')

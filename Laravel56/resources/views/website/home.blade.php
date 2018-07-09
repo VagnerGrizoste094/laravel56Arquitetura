@@ -13,7 +13,7 @@
 	    @foreach ($carrousel as $key => $name)
 		@if($key == 0)
 		    <div class="carousel-item active">  			
-			<img class="d-block w-100" src="{{ url('/storage/img/'. $carrousel[0]["name"])}}" alt="First slide">
+			<img class="d-block w-100" src="{{ url('/storage/img/'. $carrousel[$key]["name"])}}" alt="First slide">
 			<div class="carousel-caption" style="bottom: 250px;">
 			    <h1 style="color: #80bdff;letter-spacing:0.15em; font-family: 'Serif'; font-size: 64px;">ARQUITETURA SITE EM CONTRUÇÃO</h1>
 			</div>
@@ -55,13 +55,13 @@
 			<a class="nav-link" href="#sobre">SOBRE</a>
 		    </li>
 		    <li class="nav-item">
-			<a class="nav-link" href="#portfolio">PORTFÓLIO</a>
+			<a class="nav-link" href="{{route('create')}}">PORTFÓLIO</a>
 		    </li>
 		    <li class="nav-item">
 			<a class="nav-link" href="#team">EQUIPE</a>
 		    </li>
 		    <li class="nav-item">
-			<a class="nav-link" href="{{route('admin.editarHome')}}">ADMIN</a>
+			<a class="nav-link" href="{{route('carousel.index')}}">ADMIN</a>
 		    </li>
 		</ul>
 	    </div>
@@ -70,6 +70,7 @@
 </section>
 <!-- ENDNAVBAR HOME -->
 @endsection
+
 @section('sobre')
 <!-- PAGE SOBRE -->
 <section id="sobre" class="mt-5">
@@ -80,7 +81,7 @@
 		<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 		<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 	    </ol>
-	    <div class="carousel-inner">
+	    <div class="carousel-inner">	
 		<div class="carousel-item active">
 		    <div class="jumbotron jumbotron mb-0 bg-white">
 			<div class="container text-center">
@@ -88,19 +89,20 @@
 				<i class="fa fa-circle fa-stack-2x text-primary"></i>
 				<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
 			    </span>
-			    <h1 class="section-heading text-uppercase">TEXTO PRINCIPAL</h1>
-			    <p class="lead">Para que o visual de uma loja transmita credibilidade, que os consumidores reconheçam e valorizem sua marca onde estiverem e, consequentemente, as vendas aumentem, é importante um bom projeto de ambientação. Sim, a concepção arquitetônica também é essencial para despertar o interesse dos clientes e reforçar a identidade da empresa. Isso é exatamente o que nós fazemos aqui.</p>
+			    <h1 class="section-heading text-uppercase">{{$textoslide[0]['titulo']}}</h1>
+			    <p class="lead">{{$textoslide[0]['descricao']}}</p>
 			</div>
+		
 			<div class="container text-center mt-10">
 			    <span class="fa-stack fa-4x">
 				<i class="fa fa-circle fa-stack-2x text-primary"></i>
 				<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
 			    </span>
-			    <h1 class="section-heading text-uppercase">TEXTO PRINCIPAL 2</h1>
-			    <p class="lead">Para que o visual de uma loja transmita credibilidade, que os consumidores reconheçam e valorizem sua marca onde estiverem e, consequentemente, as vendas aumentem, é importante um bom projeto de ambientação. Sim, a concepção arquitetônica também é essencial para despertar o interesse dos clientes e reforçar a identidade da empresa. Isso é exatamente o que nós fazemos aqui.</p>
+			    <h1 class="section-heading text-uppercase">{{$textoslide[1]['titulo']}}</h1>
+			    <p class="lead">{{$textoslide[1]['descricao']}}</p>
 			</div>
 		    </div>
-		</div>
+		</div>		
 		<div class="carousel-item">
 		    <div class="jumbotron jumbotron mb-0 bg-white">
 			<div class="container text-center ">
@@ -108,17 +110,17 @@
 				<i class="fa fa-circle fa-stack-2x text-primary"></i>
 				<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
 			    </span>
-			    <h1 class="section-heading text-uppercase">TEXTO SECUNDARIO</h1>
-			    <p class="lead">Para que o visual de uma loja transmita credibilidade, que os consumidores reconheçam e valorizem sua marca onde estiverem e, consequentemente, as vendas aumentem, é importante um bom projeto de ambientação. Sim, a concepção arquitetônica também é essencial para despertar o interesse dos clientes e reforçar a identidade da empresa. Isso é exatamente o que nós fazemos aqui.</p>
+			    <h1 class="section-heading text-uppercase">{{$textoslide[2]["titulo"]}}</h1>
+			    <p class="lead">{{$textoslide[2]["descricao"]}}</p>
 			</div>
 			<div class="container text-center mt-10">
 			    <span class="fa-stack fa-4x">
 				<i class="fa fa-circle fa-stack-2x text-primary"></i>
 				<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
 			    </span>
-			    <h1 class="section-heading text-uppercase">TEXTO SECUNDARIO 2</h1>
-			    <p class="lead">Para que o visual de uma loja transmita credibilidade, que os consumidores reconheçam e valorizem sua marca onde estiverem e, consequentemente, as vendas aumentem, é importante um bom projeto de ambientação. Sim, a concepção arquitetônica também é essencial para despertar o interesse dos clientes e reforçar a identidade da empresa. Isso é exatamente o que nós fazemos aqui.</p>
-			</div>
+			    <h1 class="section-heading text-uppercase">{{$textoslide[3]["titulo"]}}</h1>
+			    <p class="lead">{{$textoslide[3]["descricao"]}}</p>
+			</div>	
 		    </div>
 		</div>
 		<div class="carousel-item">
@@ -128,26 +130,27 @@
 				<i class="fa fa-circle fa-stack-2x text-primary"></i>
 				<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
 			    </span>
-			    <h1 class="section-heading text-uppercase">TEXTO APOIO</h1>
-			    <p class="lead">Para que o visual de uma loja transmita credibilidade, que os consumidores reconheçam e valorizem sua marca onde estiverem e, consequentemente, as vendas aumentem, é importante um bom projeto de ambientação. Sim, a concepção arquitetônica também é essencial para despertar o interesse dos clientes e reforçar a identidade da empresa. Isso é exatamente o que nós fazemos aqui.</p>
+			    <h1 class="section-heading text-uppercase">{{$textoslide[4]["titulo"]}}</h1>
+			    <p class="lead">{{$textoslide[4]["descricao"]}}</p>
 			</div>
 			<div class="container text-center mt-10">
 			    <span class="fa-stack fa-4x">
 				<i class="fa fa-circle fa-stack-2x text-primary"></i>
 				<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
 			    </span>
-			    <h1 class="section-heading text-uppercase">TEXTO APOIO 2</h1>
-			    <p class="lead">Para que o visual de uma loja transmita credibilidade, que os consumidores reconheçam e valorizem sua marca onde estiverem e, consequentemente, as vendas aumentem, é importante um bom projeto de ambientação. Sim, a concepção arquitetônica também é essencial para despertar o interesse dos clientes e reforçar a identidade da empresa. Isso é exatamente o que nós fazemos aqui.</p>
+			    <h1 class="section-heading text-uppercase">{{$textoslide[5]["titulo"]}}</h1>
+			    <p class="lead">{{$textoslide[5]["descricao"]}}</p>
 			</div>
 		    </div>
 		</div>
+
 	    </div>
 	    <a class="carousel-control-prev" href="#carouselExampleIndicator" role="button" data-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: black"></span>
 		<span class="sr-only">Previous</span>
 	    </a>
 	    <a class="carousel-control-next" href="#carouselExampleIndicator" role="button" data-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="carousel-control-next-icon" aria-hidden="true" style="background-color: black"></span>
 		<span class="sr-only">Next</span>
 	    </a>
 	</div>	  
@@ -177,7 +180,7 @@
 			</div>
 		    </div>
 		    <div class="card">
-			<img class="card-img-top " src="{{ url('storage/img/portfolio-2.jpg')}}" alt="Card image cap">
+			<img class="card-img-top" src="{{ url('storage/img/portfolio-2.jpg')}}" alt="Card image cap">
 			<div class="card-body">
 			    <h5 class="card-title">Projeto 2</h5>
 			    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -185,7 +188,7 @@
 			</div>
 		    </div>
 		    <div class="card">
-			<img class="card-img-top " src="{{ url('storage/img/portfolio-3.jpg')}}" alt="Card image cap">
+			<img class="card-img-top" src="{{ url('storage/img/portfolio-3.jpg')}}" alt="Card image cap">
 			<div class="card-body">
 			    <h5 class="card-title">Projeto 3</h5>
 			    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>

@@ -62,7 +62,7 @@
 		<h6 class="text-uppercase font-weight-bold">UTILIDADE</h6>
 		<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
 		<p>
-		    <a href="#page-top">HOME</a>
+		    <a href="#home">HOME</a>
 		</p>
 		<p>
 		    <a href="#sobre">SOBRE</a>
