@@ -78,17 +78,17 @@
 			</nav>
 			@if(!isset($url))
 			    @yield('menu')
-			@elseif ($url == '/admin/carousel')
+			@elseif (strpos($url, '/admin/carousel') !== false)
 			    @yield('menu')
-			@elseif($url == '/admin/textoSlide')
+			@elseif(strrpos($url, '/admin/textoSlide') !== false)
 			    @yield('textoslide')
-			@elseif($url == '/admin/sobre')
+			@elseif(strrpos($url, '/admin/sobre') !== false)
 			    @yield('sobre')
-			@elseif($url == '/admin/portfolio')
+			@elseif(strrpos($url, '/admin/portfolio') !== false)
 			    @yield('portfolio')
-			@elseif($url == '/admin/team')
+			@elseif(strrpos($url, '/admin/team') !== false)
 			    @yield('team')
-			@elseif($url == '/admin/rodape')
+			@elseif(strrpos($url, '/admin/rodape') !== false)
 			    @yield('rodape')		
 			@endif
 		    </div>
